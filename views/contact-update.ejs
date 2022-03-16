@@ -1,0 +1,21 @@
+<%- include('layout-start.ejs') -%>
+<% if(contact){ %>
+<h1>Modifier un contact</h1>
+<div class="p-1 m-1 w-100">
+  <input class="form-control" value="<%= contact.name %>"/>
+  <div class="d-flex justify-content-between my-2">
+    
+  <a href="<%= "/contact/show/" + contact.id %>" class="btn btn-secondary">
+    Annuler
+  </a>
+  
+  <a href="<%= "#" %>" class="btn btn-primary">
+    Sauvegarder
+  </a>
+</div>
+</div>
+<% } else { %>
+Aucun contact trouvé
+<% }%>
+
+<%- include('layout-end.ejs') -%>

@@ -18,7 +18,7 @@ class xlsxGenerator {
     buildBuffer() {
 
         //set width of colons depending of characters length
-        maxLengthColumn = [];
+        let maxLengthColumn = [];
 
         this.data.forEach((rowArray, rowPostion) => {
             rowArray.forEach((value, columnPostion) => {

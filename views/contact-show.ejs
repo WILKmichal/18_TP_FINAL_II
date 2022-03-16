@@ -1,0 +1,14 @@
+<%- include('layout-start.ejs') -%>
+<% if(contact){ %>
+<h1>Contact show</h1>
+<p>name:
+  <%= contact.name %>
+</p>
+<a href="<%= "/contact/update/" + contact.id %>" class="btn btn-primary">
+  Modifier
+</a>
+<% } else { %>
+Aucun contact trouvé
+<% }%>
+
+<%- include('layout-end.ejs') -%>

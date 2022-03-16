@@ -7,11 +7,24 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+
+const mongoose = require('mongoose');
+const dotenv = require("dotenv");
+dotenv.config();
+
+// Mongo DB connection
+const database = process.env.MONGOLAB_URI;
+mongoose.connect(database, { useUnifiedTopology: true, useNewUrlParser: true })
+  .then(() => console.log('connected to mongo database'))
+  .catch(err => console.log(err));
+
+
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 
 app.use(logger('dev'));
 app.use(express.json());

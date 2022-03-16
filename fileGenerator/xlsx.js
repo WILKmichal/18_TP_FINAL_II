@@ -20,8 +20,8 @@ class xlsxGenerator {
         //set width of colons depending of characters length
         maxLengthColumn = [];
 
-        this.data.forEach((columnArray, rowPostion) => {
-            columnArray.forEach((value, columnPostion) => {
+        this.data.forEach((rowArray, rowPostion) => {
+            rowArray.forEach((value, columnPostion) => {
                 if (maxLengthColumn[columnPostion] == undefined) {
                     maxLengthColumn[columnPostion] = { wch: 0 };
                 }
@@ -36,7 +36,6 @@ class xlsxGenerator {
 
 
         //how to send buffer
-
         //res.writeHead(200, [['Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']]);
         //res.end(new Buffer(buffer, 'base64'));
         return xlsx.build([{ name: 'contact', data: this.data }], { sheetOptions }); // Returns a buffer

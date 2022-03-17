@@ -8,17 +8,17 @@ const contactListView = async (req, res) => {
     res.render("contact-list", { contacts: contacts });
 }
 
-const contactShowView = (req, res) => {
+const contactShowView = async (req, res) => {
     const id = req.params.id;
-    const contact = contacts.find(c => c.id == id);
+    const contact = await Contact.findById(id).exec();
     res.render("contact-show", {
         contact: contact
     });
 }
 
-const contactUpdateView = (req, res) => {
+const contactUpdateView = async (req, res) => {
     const id = req.params.id;
-    const contact = contacts.find(c => c.id == id);
+    const contact = await Contact.findById(id).exec();
     res.render("contact-update", {
         contact: contact
     });

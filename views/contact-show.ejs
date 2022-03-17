@@ -1,11 +1,32 @@
 <%- include('layout-start.ejs') -%>
 <% if(contact){ %>
 <h1>Contact show</h1>
-<p>name:
-  <%= contact.name %>
-</p>
+<% if(contact.firstName) {%>
+<p>Prénom:<%= contact.firstName %></p>
+<%}%>
+<% if(contact.lastName) {%>
+<p>Nom:<%= contact.lastName %></p>
+<%}%>
+<% if(contact.organization) {%>
+<p>Organisation:<%= contact.organization %></p>
+<%}%>
+<% if(contact.photo) {%>
+<p>Photo:<%= contact.photo %></p>
+<%}%>
+<% if(contact.workPhone) {%>
+<p>Téléphone:<%= contact.workPhone %></p>
+<%}%>
+<% if(contact.birthday) {%>
+<p>Anniversaire:<%= contact.birthday %></p>
+<%}%>
+<% if(contact.title) {%>
+<p>Titre:<%= contact.title %></p>
+<%}%>
+<% if(contact.url) {%>
+<p>URL:<%= contact.url %></p>
+<%}%>
 <a href="<%= "/contact/update/" + contact.id %>" class="btn btn-primary">
-  Modifier
+Modifier
 </a>
 <% } else { %>
 Aucun contact trouvé

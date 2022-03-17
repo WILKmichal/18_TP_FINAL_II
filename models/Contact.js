@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const contactSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -32,5 +33,5 @@ const contactSchema = new mongoose.Schema({
         required: false,
     },
 });
-const Contact = mongoose.model("Contact", ContactSchema);
+const Contact = mongoose.model("Contact", contactSchema);
 module.exports = Contact;

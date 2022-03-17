@@ -73,7 +73,7 @@ const loginUser = (req, res) => {
       });
     } else {
       passport.authenticate("local", {
-        successRedirect: "/contact",
+        successRedirect: "/",
         failureRedirect: "/login",
         failureFlash: true,
       })(req, res);

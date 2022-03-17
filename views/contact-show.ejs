@@ -40,6 +40,10 @@
         Modifier
       </a>
 
+      <a href="<%= "/downloadExcel/" + contact.firstName + "/" + contact.lastName + "/" + contact.organization + "/" + contact.photo + "/" + contact.workPhone +"/" + contact.birthday + "/" + contact.title + "/" + contact.url %>" class="btn btn-primary">
+        suppr
+      </a>
+
       <form action="/contact/delete" method="POST">
         <input type="hidden" name="id" value="<%= contact.id %>"/>
         <button type="submit" class="btn btn-danger">Supprimer</button>

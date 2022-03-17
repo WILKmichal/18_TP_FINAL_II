@@ -1,7 +1,6 @@
+var xlsx = require('node-xlsx');
 
-import xlsx from 'node-xlsx';
-
-class xlsxGenerator {
+module.exports = class xlsxGenerator {
 
     data = [];
 

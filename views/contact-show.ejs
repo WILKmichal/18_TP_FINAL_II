@@ -34,9 +34,17 @@
 <% if(contact.url) {%>
     <p>URL:<%= contact.url %></p>
     <%}%>
-<a href="<%= "/contact/update/" + contact.id %>" class="btn btn-primary">
-    Modifier
-    </a>
+    <div class="d-flex justify-content-between">
+
+      <a href="<%= "/contact/update/" + contact.id %>" class="btn btn-primary">
+        Modifier
+      </a>
+
+      <form action="/contact/delete" method="POST">
+        <input type="hidden" name="id" value="<%= contact.id %>"/>
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+      </form>
+    </div>
     <% } else { %>
     Aucun contact trouvé
     <% }%>

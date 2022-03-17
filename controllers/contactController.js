@@ -53,11 +53,49 @@ const contactCreate = (req, res) => {
     res.redirect('/');
 }
 
+const contactUpdate = async (req, res) => {
+    const {
+        id,
+        firstName,
+        lastName,
+        organization,
+        photo,
+        workPhone,
+        birthday,
+        title,
+        url } = req.body;
+
+    const contact = await Contact.findByIdAndUpdate(
+        id,
+        {
+        firstName: firstName,
+        lastName: lastName,
+        organization: organization,
+        photo: photo,
+        workPhone: workPhone,
+        birthday: birthday,
+        title: title,
+        url: url
+    });
+    contact.save();
+    res.redirect('/contact/show/' + id);
+}
+
+const contactDelete = async (req, res) => {
+    const {id} = req.body;
+
+    const contact = await Contact.findByIdAndDelete(id);
+    //contact.save();
+    res.redirect('/');
+}
+
 
 module.exports = {
     contactListView,
     contactShowView,
     contactUpdateView,
     contactCreateView,
-    contactCreate
+    contactCreate,
+    contactUpdate,
+    contactDelete,
 };

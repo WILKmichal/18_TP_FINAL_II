@@ -1,0 +1,14 @@
+<%- include('layout-start.ejs') -%>
+
+<h1>Contact list</h1>
+<ul>
+  <% contacts.forEach(function(contact){ %>
+  <li>
+    <a href="<%= "/contact/show/" + contact.id %>">
+        <%= contact.name %>
+    </a>
+  </li>
+  <% }); %>
+</ul>
+
+<%- include('layout-end.ejs') -%>

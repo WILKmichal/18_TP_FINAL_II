@@ -1,6 +1,8 @@
 <%- include('layout-start.ejs') -%>
 
-<h1>Ajouter un contact</h1>
+<h2>Ajouter un contact</h2>
+<div class="card">
+<div class="card-body">
 <form action="/contact/create" method="POST">
   <label for="firstName">Prénom</label>
   <input class="form-control my-1" type="text" id="firstName" name="firstName" />
@@ -27,8 +29,10 @@
   <input class="form-control my-1" type="url" id="url" name="url" />
 
   <div class="d-flex justify-content-end my-3">
-    <input class="btn btn-primary" type="submit" value="Ajouter" />
+    <button class="btn btn-primary" type="submit">Ajouter</button>
   </div>
 </form>
+</div>
+</div>
 
 <%- include('layout-end.ejs') -%>

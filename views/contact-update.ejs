@@ -1,6 +1,14 @@
 <%- include('layout-start.ejs') -%>
-
-<h1>Modifier un contact</h1>
+<div class="back">
+  <a class="" href="<%= "/contact/show/" + contact.id %>">
+    <i class="fa-solid fa-arrow-left-long"></i> 
+    <small>Retour au contact</small>
+  </a>
+</div>
+<h2>Modifier un contact</h2>
+<div class="card">
+  <div class="card-body">
+    
 <form action="/contact/create" method="POST">
   <label for="firstName">Prénom</label>
   <input class="form-control my-1" type="text" id="firstName" name="firstName" value="<%= contact.firstName %>" />
@@ -27,8 +35,10 @@
   <input class="form-control my-1" type="url" id="url" name="url" value="<%= contact.url %>"/>
 
   <div class="d-flex justify-content-end my-3">
-    <input class="btn btn-primary" type="submit" value="Ajouter"/>
+    <button class="btn btn-primary" type="submit">Modifier</button>
   </div>
 </form>
 
+</div>
+</div>
 <%- include('layout-end.ejs') -%>

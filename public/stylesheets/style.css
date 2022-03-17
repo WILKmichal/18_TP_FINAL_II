@@ -1,60 +1,39 @@
-body {
- 
-  
+
+span.input-group-addon {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
 }
+
 
 a {
   color: #007bff;
 }
-.navbar{
-  background-color: #007bff!important;
-  height: 5%;
+
+.navbar {
+  background-color: #007bff !important;
 }
-.card-body {
+
+.card {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
-  align-items: center;
-    background-color: #fff;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-}
-p{
-  color: red;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 }
 
-#email{
-  border-width: 1px;
-  
-  border-radius: 15px;
+form input {
+  border-width: 1px !important;
+  border-radius: 15px !important;
 }
-#email:hover{
-  
-  
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+form input:hover {
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   border-color: #007bff;
 }
-#password{
-  border-width: 1px;
-  
-  border-radius: 15px;
-}
-#password:hover{
-  
-  
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-border-color: #007bff;
-}
 
-
-/* //register */
-#FormRegister input{
-  border-width: 1px;
-  
-  border-radius: 15px;
-}
-#FormRegister input:hover{
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  border-color: #007bff;
+@media (min-width: 576px) { 
+  .back{
+    margin-left: -2rem;
+  }
 }

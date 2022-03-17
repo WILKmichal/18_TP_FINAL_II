@@ -8,6 +8,7 @@ const User = require("../models/User");
 const loginCheck = passport => {
   passport.use(
     new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
+      console.log("test")
       //Check customer
       User.findOne({ email: email })
         .then((user) => {

@@ -1,14 +1,23 @@
 <%- include('layout-start.ejs') -%>
+<h2>Tous les contacts</h2>
+<div class="row">
+  <% contacts.forEach(function(contact){ %>
+  <div class="card col-12  
+    mx-auto my-1 px-5
+     flex-row align-items-center
+     position-relative
+      justify-content-between">
+    <a href="<%= "/contact/show/" + contact.id %>" class="stretched-link">
+      <% if(contact.firstName) {%>
+      <%= contact.firstName %>
+      <%} else{%>
+        Contact <%= contact.id %>
+      <%}%>
 
-<h2>Contact list</h2>
-<ul>
-  <% if(contacts){ contacts.forEach(function(contact){ %>
-  <li>
-    <a href="<%= "/contact/show/" + contact.id %>">
-        <%= JSON.stringify(contact) %>
     </a>
-  </li>
-  <% });} %>
-</ul>
+    <i class="fa-solid fa-angle-right"></i>
+  </div>
+  <% }); %>
+  </div>
 
-<%- include('layout-end.ejs') -%>
+  <%- include('layout-end.ejs') -%>

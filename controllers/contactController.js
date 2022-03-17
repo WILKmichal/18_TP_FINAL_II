@@ -77,7 +77,6 @@ const contactUpdate = async (req, res) => {
         title: title,
         url: url
     });
-    contact.save();
     res.redirect('/contact/show/' + id);
 }
 
@@ -85,7 +84,6 @@ const contactDelete = async (req, res) => {
     const {id} = req.body;
 
     const contact = await Contact.findByIdAndDelete(id);
-    //contact.save();
     res.redirect('/');
 }
 

@@ -5,13 +5,13 @@ span.input-group-addon {
   padding: 0.5rem;
 }
 
-
+/* NAVABAR / LAYOUT START */
 a {
   color: #007bff;
 }
-
-.navbar {
-  background-color: #007bff !important;
+#NavTop{
+  background-color: #007bff!important;
+  height: 5%;
 }
 
 .card {
@@ -36,4 +36,81 @@ form input:hover {
   .back{
     margin-left: -2rem;
   }
+}
+/* //register */
+#FormRegister input{
+  border-width: 1px;
+  
+  border-radius: 15px;
+}
+#FormRegister input:hover{
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-color: #007bff;
+}
+
+/* CONTACT LIST */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 3%;
+  margin-top: 2%;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+#ListContact{
+  
+
+}
+#Contact{
+  align-content: center;
+}
+#Contact a {
+  text-decoration: none;
+}
+#Contact a:hover{
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-color: #007bff;
+  text-decoration:underline;
+}
+#Contact .card:hover{
+  
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.5);
+    
 }

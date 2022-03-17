@@ -2,13 +2,13 @@
 
 <h1>Contact list</h1>
 <ul>
-  <% contacts.forEach(function(contact){ %>
+  <% if(contacts){ contacts.forEach(function(contact){ %>
   <li>
     <a href="<%= "/contact/show/" + contact.id %>">
-        <%= contact.name %>
+        <%= JSON.stringify(contact) %>
     </a>
   </li>
-  <% }); %>
+  <% });} %>
 </ul>
 
 <%- include('layout-end.ejs') -%>

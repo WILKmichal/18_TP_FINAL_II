@@ -1,5 +1,16 @@
 <%- include('layout-start.ejs') -%>
 
 <h1>Contact Create</h1>
+<form action="/contact/create" method="POST">
+  <input class="form-control" type="text" name="firstName" />
+  <input class="form-control" type="text" name="lastName" />
+  <input class="form-control" type="text" name="organization" />
+  <input class="form-control" type="image" name="photo" />
+  <input class="form-control" type="tel" name="workPhone" />
+  <input class="form-control" type="date" name="birthday" />
+  <input class="form-control" type="text" name="title" />
+  <input class="form-control" type="url" name="url" />
+  <input type="submit" />
+</form>
 
 <%- include('layout-end.ejs') -%>

@@ -1,14 +1,22 @@
 <%- include('layout-start.ejs') -%>
+<link rel='stylesheet' href='/stylesheets/style.css' />
 
-<h1>Contact list</h1>
-<ul>
-  <% contacts.forEach(function(contact){ %>
-  <li>
-    <a href="<%= "/contact/show/" + contact.id %>">
-        <%= contact.name %>
-    </a>
-  </li>
-  <% }); %>
-</ul>
-
+<div class="row col-12" id="ListContact">
+  <h1>Contact list</h1>
+  <div class="column">
+    <div class="card row cols-md-2" id="Contact">
+      <% contacts.forEach(function(contact){ %>
+        <div  class="card col-6" >
+          <a href="<%= "/contact/show/" + contact.id %>">
+          
+            <%= contact.name %>
+          
+        </a>
+      </div>
+      <% }); %>
+        </div>
+        
+    </div>
+  </div>
+</div>
 <%- include('layout-end.ejs') -%>

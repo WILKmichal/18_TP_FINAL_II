@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 const session = require('express-session');
 const passport = require("passport");
 
-var excelDowloadRouter = require('./routes/excelDowload');
+var excelDowloadRouter = require('./routes/excelDownload');
 const {loginCheck} = require("./auth/passport");
 loginCheck(passport);
 

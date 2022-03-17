@@ -1,6 +1,6 @@
 var xlsx = require('node-xlsx');
 
-module.exports = class xlsxGenerator {
+class xlsxGenerator {
 
     data = [];
 
@@ -35,8 +35,12 @@ module.exports = class xlsxGenerator {
 
 
         //how to send buffer
-        //res.writeHead(200, [['Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']]);
-        //res.end(new Buffer(buffer, 'base64'));
+        // res.writeHead(200, [['Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']]);
+        // res.end(new Buffer(buffer, 'base64'));
         return xlsx.build([{ name: 'contact', data: this.data }], { sheetOptions }); // Returns a buffer
     }
 }
+
+module.exports = {
+    xlsxGenerator
+};

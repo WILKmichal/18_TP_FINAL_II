@@ -70,6 +70,12 @@
                 </div>
 </div>
 
+<% if(errorMessage){ %>
+    <div class="alert alert-primary" role="alert">
+      <%= errorMessage %>
+    </div>
+    <% } %>
+    
 </body>
 </html>
 <%- include('layout-end.ejs') -%>

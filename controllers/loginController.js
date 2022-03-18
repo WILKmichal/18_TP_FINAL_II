@@ -6,12 +6,12 @@ const passport = require("passport");
 
 //For Register Page
 const registerView = (req, res) => {
-    res.render("register", {
+    res.render("register", { errorMessage : false
     });
 }
 // For View 
 const loginView  = (req, res) => {
-    res.render("login", {
+    res.render("login", { errorMessage : false
     });
 }
 
@@ -19,22 +19,21 @@ const registerUser = (req, res) => {
     const { firstName, lastName, email, password, confirm } = req.body;
     
     if (!firstName ||!lastName || !email || !password || !confirm) {
-        console.log("Fill empty fields");
+        errorMessage = "Fill empty fields";
     }
     //Confirm Passwords
     if (password !== confirm) {
-        console.log("Password must match");
+        errorMessage = "Password must match";
+        res.render("register", {
+            errorMessage
+        });
     } else {
         //Validation
         User.findOne({ email: email }).then((user) => {
             if (user) {
-                console.log("email exists");
+                errorMessage = "email exists";
                 res.render("register", {
-                    firstName,
-                    lastName,
-                    email,
-                    password,
-                    confirm,
+                    errorMessage
                 });
             } else {
                 //Validation
@@ -65,10 +64,9 @@ const loginUser = (req, res) => {
     const { email, password } = req.body;
     //Required
     if (!email || !password) {
-      console.log("Please fill in all the fields");
+      errorMessage = "remplir tout les champs"
       res.render("login", {
-        email,
-        password,
+        errorMessage
       });
     } else {
       passport.authenticate("local", {

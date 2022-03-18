@@ -43,5 +43,12 @@
 
     </div>
   </div>
+  <% if(errorMessage){ %>
+    <div class="alert alert-primary" role="alert">
+      <%= errorMessage %>
+    </div>
+    <% } %>
+
 </div>
 <%- include('layout-end.ejs'); %>
+ 

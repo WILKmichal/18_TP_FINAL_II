@@ -12,6 +12,7 @@ const session = require('express-session');
 const passport = require("passport");
 
 var excelDowloadRouter = require('./routes/excelDowload');
+var pdfDowloadRouter = require('./routes/pdfDownload');
 const { protectRoute } = require("./auth/protect");
 const {loginCheck} = require("./auth/passport");
 loginCheck(passport);
@@ -57,6 +58,7 @@ app.use('/users', usersRouter);
 app.use('/contact',protectRoute, require('./routes/contact'));
 
 app.use('/downloadExcel', protectRoute , excelDowloadRouter);
+app.use('/downloadPdf', protectRoute , pdfDowloadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

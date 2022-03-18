@@ -3,14 +3,14 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 //js
 
+
 //For Register Page
 const registerView = (req, res) => {
     res.render("register", {
     });
 }
 // For View 
-const loginView = (req, res) => {
-
+const loginView  = (req, res) => {
     res.render("login", {
     });
 }

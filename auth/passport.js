@@ -8,12 +8,11 @@ const User = require("../models/User");
 const loginCheck = passport => {
   passport.use(
     new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
-      console.log("test")
       //Check customer
       User.findOne({ email: email })
         .then((user) => {
           if (!user) {
-            console.log("wrong email");
+            errorMessage ="wrong email";
             return done();
           }
           //Match Password
@@ -22,7 +21,7 @@ const loginCheck = passport => {
             if (isMatch) {
               return done(null, user);
             } else {
-              console.log("Wrong password");
+              errorMessage ="Wrong password";
               return done();
             }
           });

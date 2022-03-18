@@ -69,6 +69,11 @@
                     </div>
                 </div>
 </div>
+<% if(!(errorMessage == undefined)){ %>
+    <div class="alert alert-primary" role="alert">
+      <%= errorMessage %>
+    </div>
+    <% } %>
 
 </body>
 </html>

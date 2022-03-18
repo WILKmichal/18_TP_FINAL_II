@@ -36,6 +36,11 @@
             <a href="/register">Inscription</a>
           </div>
         </form>
+        <% if(!(errorMessage == undefined)){ %>
+          <div class="alert alert-primary" role="alert">
+            <%= errorMessage %>
+          </div>
+          <% } %>
       </div>
 
     </div>

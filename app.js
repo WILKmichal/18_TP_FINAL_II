@@ -50,13 +50,13 @@ app.use(passport.session());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/',protectRoute, indexRouter);
+app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/users', usersRouter);
 app.use('/contact',protectRoute, require('./routes/contact'));
 
-app.use('/downloadExcel', protectRoute , excelDowload);
+//app.use('/downloadExcel', protectRoute , excelDowload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

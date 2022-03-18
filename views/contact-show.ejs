@@ -1,7 +1,7 @@
 <%- include('layout-start.ejs') -%>
 <div class="back">
   <a class="" href="/">
-    <i class="fa-solid fa-arrow-left-long"></i> 
+    <i class="fa-solid fa-arrow-left-long"></i>
     <small>Retour à la liste</small>
   </a>
 </div>
@@ -11,45 +11,44 @@
   <div class="card-body">
 
     <% if(contact.firstName) {%>
-    <p>Prénom:<%= contact.firstName %></p>
+    <p>Prénom : <%= contact.firstName %></p>
     <%}%>
 <% if(contact.lastName) {%>
-    <p>Nom:<%= contact.lastName %></p>
+    <p>Nom : <%= contact.lastName %></p>
     <%}%>
 <% if(contact.organization) {%>
-    <p>Organisation:<%= contact.organization %></p>
+    <p>Organisation : <%= contact.organization %></p>
     <%}%>
 <% if(contact.photo) {%>
-    <p>Photo:<%= contact.photo %></p>
+    <p>Photo : <%= contact.photo %></p>
     <%}%>
 <% if(contact.workPhone) {%>
-    <p>Téléphone:<%= contact.workPhone %></p>
+    <p>Téléphone : <%= contact.workPhone %></p>
     <%}%>
 <% if(contact.birthday) {%>
-    <p>Anniversaire:<%= contact.birthday %></p>
+    <p>Anniversaire : <%= contact.birthday %></p>
     <%}%>
 <% if(contact.title) {%>
-    <p>Titre:<%= contact.title %></p>
+    <p>Titre : <%= contact.title %></p>
     <%}%>
 <% if(contact.url) {%>
-    <p>URL:<%= contact.url %></p>
+    <p>URL : <%= contact.url %></p>
     <%}%>
     <div class="d-flex justify-content-between">
 
       <a href="<%= "/contact/update/" + contact.id %>" class="btn btn-primary">
-        Modifier
-      </a>
-
-      <form action="/contact/delete" method="GET">
-        <input type="hidden" name="id" value="<%= contact.id %>"/>
-        <button type="submit" class="btn btn-danger">Supprimer</button>
-      </form>
-    </div>
-    <% } else { %>
-    Aucun contact trouvé
-    <% }%>
-
+    Modifier
+    </a>
+    <form action="/contact/delete" method="POST">
+      <input type="hidden" name="id" value="<%= contact.id %>" />
+      <button type="submit" class="btn btn-danger">Supprimer</button>
+    </form>
   </div>
+  <% } else { %>
+  Aucun contact trouvé
+  <% }%>
+
+</div>
 </div>
 
 <%- include('layout-end.ejs') -%>

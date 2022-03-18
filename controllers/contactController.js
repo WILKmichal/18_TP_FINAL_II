@@ -69,16 +69,15 @@ const contactUpdate = async (req, res) => {
     const contact = await Contact.findByIdAndUpdate(
         id,
         {
-            firstName: firstName,
-            lastName: lastName,
-            organization: organization,
-            photo: photo,
-            workPhone: workPhone,
-            birthday: birthday,
-            title: title,
-            url: url
-        });
-    contact.save();
+        firstName: firstName,
+        lastName: lastName,
+        organization: organization,
+        photo: photo,
+        workPhone: workPhone,
+        birthday: birthday,
+        title: title,
+        url: url
+    });
     res.redirect('/contact/show/' + id);
 }
 
@@ -86,7 +85,6 @@ const contactDelete = async (req, res) => {
     const { id } = req.body;
 
     const contact = await Contact.findByIdAndDelete(id);
-    //contact.save();
     res.redirect('/');
 }
 

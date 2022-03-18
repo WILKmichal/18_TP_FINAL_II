@@ -48,6 +48,11 @@
       <a href="<%= "/contact/update/" + contact.id %>" class="btn btn-primary">
         Modifier
         </a>
+
+        <form action="/downloadPdf" method="GET">
+          <button type="submit" class="btn btn-info">Exporter au format pdf</button>
+        </form>
+
         <form action="/contact/delete" method="POST">
           <input type="hidden" name="id" value="<%= contact.id %>" />
           <button type="submit" class="btn btn-danger">Supprimer</button>

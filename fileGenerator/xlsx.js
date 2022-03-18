@@ -19,16 +19,16 @@ class xlsxGenerator {
         //set width of colons depending of characters length
         let maxLengthColumn = [];
 
-        this.data.forEach((rowArray, rowPostion) => {
-            rowArray.forEach((value, columnPostion) => {
-                if (maxLengthColumn[columnPostion] == undefined) {
-                    maxLengthColumn[columnPostion] = { wch: 0 };
-                }
-                if (maxLengthColumn[columnPostion].wch < value.toString().length) {
-                    maxLengthColumn[columnPostion].wch = value.toString().length
-                }
-            });
-        });
+        // this.data.forEach((rowArray, rowPostion) => {
+        //     rowArray.forEach((value, columnPostion) => {
+        //         if (maxLengthColumn[columnPostion] == undefined) {
+        //             maxLengthColumn[columnPostion] = { wch: 0 };
+        //         }
+        //         if (maxLengthColumn[columnPostion].wch < value.toString().length) {
+        //             maxLengthColumn[columnPostion].wch = value.toString().length
+        //         }
+        //     });
+        // });
 
         //set width of column
         const sheetOptions = { '!cols': maxLengthColumn };

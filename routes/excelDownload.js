@@ -5,7 +5,6 @@ const {xlsxGenerator }= require("../fileGenerator/xlsx");
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-    console.log(req.query)
     const excel = new xlsxGenerator("test");
     const buffer = excel.buildBuffer();
     res.writeHead(200, [['Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']]);

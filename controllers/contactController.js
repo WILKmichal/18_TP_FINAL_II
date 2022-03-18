@@ -5,7 +5,8 @@ const Contact = require("../models/Contact");
 const contactListView = async (req, res) => {
     const contacts = await Contact.find();
     console.log(contacts)
-    res.render("contact-list", { contacts: contacts });
+    let user =  req.user;
+    res.render("contact-list", { contacts: contacts, user: user });
 }
 
 const contactShowView = async (req, res) => {
@@ -68,21 +69,21 @@ const contactUpdate = async (req, res) => {
     const contact = await Contact.findByIdAndUpdate(
         id,
         {
-        firstName: firstName,
-        lastName: lastName,
-        organization: organization,
-        photo: photo,
-        workPhone: workPhone,
-        birthday: birthday,
-        title: title,
-        url: url
-    });
+            firstName: firstName,
+            lastName: lastName,
+            organization: organization,
+            photo: photo,
+            workPhone: workPhone,
+            birthday: birthday,
+            title: title,
+            url: url
+        });
     contact.save();
     res.redirect('/contact/show/' + id);
 }
 
 const contactDelete = async (req, res) => {
-    const {id} = req.body;
+    const { id } = req.body;
 
     const contact = await Contact.findByIdAndDelete(id);
     //contact.save();

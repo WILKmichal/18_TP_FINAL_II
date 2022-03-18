@@ -5,7 +5,7 @@ const { xlsxGenerator } = require("../fileGenerator/xlsx");
 const Contact = require("../models/Contact");
 
 const contactXlsx = async (req, res) => {
-    const contacts = await Contact.find(user_id = req.id);
+    const contacts = await Contact.find({user_id: req.user.id});
     const excel = new xlsxGenerator("firstName", "lastName", "organization", "photo", "workPhone", "birthday", "title", "url");
     contacts.forEach((contact) => {
         excel.addARow(

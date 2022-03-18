@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-const { contactListView } = require('../controllers/contactController');
+const { contactListRedirect } = require('../controllers/contactController');
 
-router.get('/', contactListView);
+router.get('/', contactListRedirect);
 
 module.exports = router;

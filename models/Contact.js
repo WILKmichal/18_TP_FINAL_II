@@ -32,6 +32,10 @@ const contactSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    user_id: {
+        type: String,
+        required: true,
+    },
 });
 const Contact = mongoose.model("Contact", contactSchema);
 module.exports = Contact;

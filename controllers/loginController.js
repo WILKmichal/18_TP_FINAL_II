@@ -25,6 +25,7 @@ const registerUser = (req, res) => {
         res.render("register", {
             errorMessage
         });
+        return;
     }
     //Confirm Passwords
     if (password !== confirm) {
@@ -32,6 +33,7 @@ const registerUser = (req, res) => {
         res.render("register", {
             errorMessage
         });
+        return;
     } else {
         //Validation
         User.findOne({ email: email }).then((user) => {
@@ -40,6 +42,7 @@ const registerUser = (req, res) => {
                 res.render("register", {
                     errorMessage
                 });
+                return;
             } else {
                 //Validation
                 const newUser = new User({
@@ -73,6 +76,7 @@ const loginUser = (req, res) => {
       res.render("login", {
         errorMessage
       });
+      return;
     } else {
       passport.authenticate("local", {
         successRedirect: "/",

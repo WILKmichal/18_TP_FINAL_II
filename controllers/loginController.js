@@ -17,7 +17,6 @@ const loginView  = (req, res) => {
 
 const registerUser = (req, res) => {
     const { firstName, lastName, email, password, confirm } = req.body;
-    console.log( firstName, lastName, email, password, confirm);
     
     if (!firstName ||!lastName || !email || !password || !confirm) {
         console.log("Fill empty fields");

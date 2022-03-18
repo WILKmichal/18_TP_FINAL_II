@@ -4,7 +4,6 @@ const Contact = require("../models/Contact");
 
 const contactListView = async (req, res) => {
     const contacts = await Contact.find();
-    console.log(contacts)
     let user =  req.user;
     res.render("contact-list", { contacts: contacts, user: user });
 }

@@ -9,7 +9,8 @@
 <div class="card">
   <div class="card-body">
     
-<form action="/contact/create" method="POST">
+<form action="/contact/update" method="POST">
+  <input type="hidden" name="id" value="<%= contact.id %>" />
   <label for="firstName">Prénom</label>
   <input class="form-control my-1" type="text" id="firstName" name="firstName" value="<%= contact.firstName %>" />
 

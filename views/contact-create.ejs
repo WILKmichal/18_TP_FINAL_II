@@ -6,7 +6,12 @@
 <div class="col-md-8">
   <h2>Ajouter un contact</h2>
 <div class="card">
-<div class="card-body" id="FormRegister">
+<div class="card-body">
+<form action="/contact/create" method="POST">
+  <input type="hidden" id="user_id" name="userID" value="<%= user.id %>" />
+
+  <label for="firstName">Prénom</label>
+  <input class="form-control my-1" type="text" id="firstName" name="firstName" />
 
     <form action="/contact/create" method="POST">
       

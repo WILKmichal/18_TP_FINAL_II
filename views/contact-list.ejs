@@ -1,22 +1,29 @@
 <%- include('layout-start.ejs') -%>
-<link rel='stylesheet' href='/stylesheets/style.css' />
+  <h2>Tous les contacts</h2>
+  <div class="row">
+    <% contacts.forEach(function(contact){ %>
+      <div class="card col-12  
+    mx-auto my-1 px-5
+     flex-row align-items-center
+     position-relative
+      justify-content-between">
+        <a href="<%= " /contact/show/" + contact.id %>" class="stretched-link">
+          <% if(contact.firstName) {%>
+            <%= contact.firstName %>
+              <%} else{%>
+                Contact <%= contact.id %>
+                  <%}%>
 
-<div class="row col-12" id="ListContact">
-  <h1>Contact list</h1>
-  <div class="column">
-    <div class="card row cols-md-2" id="Contact">
-      <% contacts.forEach(function(contact){ %>
-        <div  class="card col-6" >
-          <a href="<%= "/contact/show/" + contact.id %>">
-          
-            <%= contact.name %>
-          
         </a>
+        <i class="fa-solid fa-angle-right"></i>
       </div>
       <% }); %>
-        </div>
-        
-    </div>
   </div>
-</div>
-<%- include('layout-end.ejs') -%>
+  <form action="/downloadPdf" method="GET">
+    <button type="submit" class="btn btn-danger">Export pdf</button>
+  </form>
+  <form action="/downloadExcel" method="GET">
+    <button type="submit" class="btn btn-danger">Export excel</button>
+  </form>
+
+  <%- include('layout-end.ejs') -%>

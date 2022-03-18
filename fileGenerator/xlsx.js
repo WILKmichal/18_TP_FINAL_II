@@ -1,5 +1,4 @@
-
-import xlsx from 'node-xlsx';
+var xlsx = require('node-xlsx');
 
 class xlsxGenerator {
 
@@ -20,24 +19,28 @@ class xlsxGenerator {
         //set width of colons depending of characters length
         let maxLengthColumn = [];
 
-        this.data.forEach((rowArray, rowPostion) => {
-            rowArray.forEach((value, columnPostion) => {
-                if (maxLengthColumn[columnPostion] == undefined) {
-                    maxLengthColumn[columnPostion] = { wch: 0 };
-                }
-                if (maxLengthColumn[columnPostion].wch < value.toString().length) {
-                    maxLengthColumn[columnPostion].wch = value.toString().length
-                }
-            });
-        });
+        // this.data.forEach((rowArray, rowPostion) => {
+        //     rowArray.forEach((value, columnPostion) => {
+        //         if (maxLengthColumn[columnPostion] == undefined) {
+        //             maxLengthColumn[columnPostion] = { wch: 0 };
+        //         }
+        //         if (maxLengthColumn[columnPostion].wch < value.toString().length) {
+        //             maxLengthColumn[columnPostion].wch = value.toString().length
+        //         }
+        //     });
+        // });
 
         //set width of column
         const sheetOptions = { '!cols': maxLengthColumn };
 
 
         //how to send buffer
-        //res.writeHead(200, [['Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']]);
-        //res.end(new Buffer(buffer, 'base64'));
+        // res.writeHead(200, [['Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']]);
+        // res.end(new Buffer(buffer, 'base64'));
         return xlsx.build([{ name: 'contact', data: this.data }], { sheetOptions }); // Returns a buffer
     }
 }
+
+module.exports = {
+    xlsxGenerator
+};

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const contactSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: false,
+        required: true,
     },
     lastName: {
         type: String,
@@ -31,6 +31,10 @@ const contactSchema = new mongoose.Schema({
     url: {
         type: String,
         required: false,
+    },
+    user_id: {
+        type: String,
+        required: true,
     },
 });
 const Contact = mongoose.model("Contact", contactSchema);

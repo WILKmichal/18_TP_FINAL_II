@@ -51,6 +51,7 @@
         </a>
 
         <form action="/downloadPdf" method="GET">
+          <input type="hidden" name="id" value="<%= contact.id %>" />
           <button type="submit" class="btn my-1 d-block btn-info w-100">Exporter au format pdf</button>
         </form>
 

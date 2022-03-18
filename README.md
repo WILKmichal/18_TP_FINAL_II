@@ -6,10 +6,16 @@
 2. Docker
 3. npm
 
-1. dans la racine du projet crée un fichier .env avec la variable MONGOLAB_URI= qui serra le lien de connection vers la db
+### Crée la base de données et les identifiants de connection
 
-2. dans la racine du projet éxecuter la commande suivante:
+Dans le dossier ```docker``` lancer la commande ```docker compose up```
 
-``` npm install```
+Crée un fichier ```.env``` à la racine du projet avec la variable ```MONGOLAB_URI= "mongodb://root:rootpassword@127.0.0.1:27017/?maxPoolSize=20&w=majority"```
 
-2. crée un 
+### installer l'application et l'éxecuter
+
+Exectuer la commande ```npm install```
+
+Lancer le serveur avec la commande ```npm start```
+
+> Le site serra à l'addresse http://localhost:3000/

@@ -12,6 +12,8 @@ a {
 
 .navbar {
   background-color: #007bff !important;
+  border-radius: 8px;
+  margin: 8px;
 }
 
 .card {

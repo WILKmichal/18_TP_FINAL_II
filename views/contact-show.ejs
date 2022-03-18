@@ -28,18 +28,19 @@
         <p>Téléphone : <%= contact.workPhone %></p>
         <%}%>
 <% if(contact.birthday) {%>
-        <p>Anniversaire : <%= contact.birthday %></p>
+        <p>Anniversaire : <%= contact.birthday.toLocaleString(); %></p>
         <%}%>
 <% if(contact.title) {%>
         <p>Titre : <%= contact.title %></p>
         <%}%>
 <% if(contact.url) {%>
-        <p>URL : <%= contact.url %></p>
+        <p>URL : <a href="<%= contact.url %>"><%= contact.url %></a></p>
         <%}%>
 
     </div>
-<div>
-  <img src="<%= qr %>"/>
+<div class="d-flex flex-column bg-light p-2 mb-3 ml-3 border rounded">
+  <img class="d-block" src="<%= qr %>"/>
+  <small class="text-center d-block mx-auto my-2" style="width: 200px;">Scannez le QR code pour ajouter le contact à votre téléphone</small>
 </div>
 
     </div>
